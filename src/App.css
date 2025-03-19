@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+#root, html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./images/forest.jpg");
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.quotes {
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 40%;
+    height: 30%;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.6);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.advice {
+    background: linear-gradient(45deg, #fafcf4, #61dafb);
+    width: 40%;
+    height: 20%;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.6);
 }
 
-.App-link {
-  color: #61dafb;
+.text {
+    font-family: "Indie Flower";
+    padding: 4px;
+    font-weight: 700;
+    overflow: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button {
+    border-radius: 5px;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.advice .button {
+    border: 2px solid rgba(22, 76, 167, 0.6);
+
+}
+
+.quotes .button {
+    border: 2px solid rgba(255, 126, 17, 0.6);
+}
+
+.button span {
+    font-size: 12px;
+    font-family: "Indie FLower";
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.advice .button span {
+    color: #164ca7;
+}
+
+.quotes .button span {
+    color: #ef3f10;
+}
+
+.button:hover {
+    animation: rotate 0.4s ease-in 5;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    0%, 50%, 100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+        transform: rotate(2deg) translate3d(0, 0, 0);
+        border-color: transparent;
+    }
+    75% {
+        transform: rotate(-2deg) translate3d(0, 0, 0);
+    }
+}
+
+.button:hover span {
+    animation: storm 2s ease-in;
+    animation-delay: 0.06s;
+}
+
+@keyframes storm {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    25% {
+        transform: translate3d(4px, 0, 0);
+    }
+    50% {
+        transform: translate3d(-3px, 0, 0);
+    }
+    75% {
+        transform: translate3d(2px, 0, 0);
+    }
+}
+
+/*for mobile*/
+@media only screen and (max-width: 600px) {
+    .quotes {
+        width: 60%;
+        height: 40%;
+    }
+    .advice {
+        width: 60%;
+        height: 30%;
+    }
 }
