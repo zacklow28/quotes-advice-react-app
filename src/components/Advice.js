@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import "../App.css"
 
-const API_URL = "https://api.adviceslip.com/advice";
+const API_URL = process.env.REACT_APP_ADVICE_URL;
 
 const Advice = () => {
     const [advice, setAdvice] = useState("");

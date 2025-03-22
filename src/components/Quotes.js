@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import "../App.css"
 
-const API_URL = "https://thequoteshub.com/api/";
+const API_URL = process.env.REACT_APP_QUOTE_URL;
 
 const Quotes = () => {
     const [quotes, setQuotes] = useState("");
